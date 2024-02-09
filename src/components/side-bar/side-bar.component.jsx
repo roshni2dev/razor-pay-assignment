@@ -1,12 +1,12 @@
 import React, { Fragment, useState } from 'react';
-import { Drawer, Tooltip } from '@mui/material';
+import { Divider, Drawer, Tooltip } from '@mui/material';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import {data} from './data';
 
 import logo from '../../assets/logo.png'
 
-const SideBar = () => {
+const SideBar = ({setActivePath}) => {
     const [isSideBarOpen, setIsSideBarOpen] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
@@ -40,7 +40,7 @@ const SideBar = () => {
                                     {
                                         data.map((item) => (
                                             <div
-                                                onClick={() => { navigate(item.route) }}
+                                                onClick={() => { navigate(item.route); setActivePath(item)}}
                                                 className={`flex items-center px-4  py-2 mb-2 ${location.pathname === item.route ? 'bg-[#383e5a] ' : 'bg-[#242a4a]'}`} key={item.id}>
                                                 <div className={`mr-4 ${location.pathname === item.route ? 'text-[#f5f6f7]' : 'text-[#9b9dab]'}`}   >{item.icon}</div>
                                                 <p className={`text-sm ${location.pathname === item.route ? 'text-[#f5f6f7]' : 'text-[#9b9dab]'}`}   >{item.title}</p>
@@ -63,7 +63,7 @@ const SideBar = () => {
                                     data.map((item) => (
                                         <Tooltip title={item.title} placement='right'>
                                             <div
-                                                onClick={() => { navigate(item.route) }}
+                                                onClick={() => { navigate(item.route);setActivePath(item) }}
                                                 className={`flex justify-center items-center px-4 py-2 mb-2 ${location.pathname === item.route ? 'bg-[#383e5a]' : 'bg-[#080d29]'}`} key={item.id}>
                                                 <div className={`${location.pathname === item.route ? 'text-[#f5f6f7]' : 'text-[#9b9dab]'}`}   >{item.icon}</div>
 
@@ -75,6 +75,7 @@ const SideBar = () => {
                         </div>
                     </div>
             }
+            <Divider orientation="vertical" />
         </Fragment>
     );
 }

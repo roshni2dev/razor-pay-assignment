@@ -1,43 +1,28 @@
 
 
 import { Route, Routes } from "react-router-dom";
-import { Box } from '@mui/material';
+import { Box, Breadcrumbs } from '@mui/material';
 import SideBar from "./components/side-bar/side-bar.component";
+import { useState } from "react";
+import TopBar from "./components/top-bar/top-bar.component";
+import Home from "./routes/home/home.component";
 
 function App() {
-  return (
-    <div className={` h-screen w-screen flex`
-    }>
-      <SideBar />
-      <Box className='h-full overflow-y-scroll w-full p-5 hide-scrollbar animate-slideleft'>
-        <Routes>
-          <Route path='/' >
-            <Route index element={<Home />} />
-            <Route path='music' element={<Music />} />
-            <Route path='collections' element={<Collection />} />
-          </Route>
-        </Routes>
-      </Box>
-    </div >
-  );
+    const [activePath, setActivePath] = useState(null);
+
+    return (
+        <div className={` h-screen w-screen flex`}>
+            <SideBar setActivePath={setActivePath} />
+            <Box className='h-full overflow-y-scroll w-full hide-scrollbar '>
+                <TopBar activePath={activePath} />
+                <Routes>
+                    <Route path='/' >
+                        <Route index element={<Home />} />
+                    </Route>
+                </Routes>
+            </Box>
+        </div >
+    );
 }
 
 export default App;
-
-
-export const Home =()=> {
-  return(
-    <div style={{width: '1000px' ,background: '#1d2345'}}>Home</div>
-  )
-}
-
-export const Music =()=> {
-  return(
-    <div>Music</div>
-  )
-}
-export const Collection =()=> {
-  return(
-    <div>Collection</div>
-  )
-}
