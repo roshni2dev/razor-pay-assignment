@@ -57,7 +57,3 @@ const TopBar = ({ activePath }) => {
 }
 
 export default TopBar
-
-{/* // single background-color 0c1a3e
-// text color 72aee8
-// green background 05865c */}

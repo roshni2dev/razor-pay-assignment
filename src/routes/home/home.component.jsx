@@ -3,7 +3,7 @@ import Filters from "../../components/filters/filters.component"
 import TableList from "../../components/table-list/table-list.component"
 import TestMessage from "../../components/test-message/test-message.component"
 import { Checkbox } from "@mui/material"
-import { Download, FileDownload, FileDownloadOutlined, KeyboardArrowDown, MoreVertOutlined, ReplayOutlined } from "@mui/icons-material"
+import {FileDownloadOutlined, KeyboardArrowDown, MoreVertOutlined, ReplayOutlined } from "@mui/icons-material"
 
 const Home = () => {
     return (

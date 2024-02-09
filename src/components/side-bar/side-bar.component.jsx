@@ -35,7 +35,7 @@ const SideBar = ({setActivePath}) => {
                         <div className={`h-full w-[272px] bg-[#242a4a] flex justify-between flex-col`}>
                             <div>
                                 <div className='p-4 flex justify-start items-center' onClick={toggleDrawer(false)}>
-                                    <img src={logo} className='w-[120px]' />
+                                    <img src={logo} className='w-[120px]' alt='logo' />
                                 </div>
                                 <div className='pt-4 cursor-pointer'>
                                     {
