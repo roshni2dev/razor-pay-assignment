@@ -1,9 +1,8 @@
-
-
-import { Route, Routes } from "react-router-dom";
-import { Box, Breadcrumbs } from '@mui/material';
-import SideBar from "./components/side-bar/side-bar.component";
 import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import { Box } from '@mui/material';
+
+import SideBar from "./components/side-bar/side-bar.component";
 import TopBar from "./components/top-bar/top-bar.component";
 import Home from "./routes/home/home.component";
 

@@ -4,7 +4,7 @@ import { HomeOutlined, KeyboardArrowDown, Search,PersonOutline, CampaignOutlined
 
 const TopBar = ({ activePath }) => {
     return (
-        <div className=" flex items-center justify-between bg-[#080d29] py-4 px-4">
+        <div className=" flex items-center justify-between bg-[#080d29] py-4 px-4 relative">
             <div className=" flex items-center justify-start">
                 <Breadcrumbs aria-label="breadcrumb" style={{ color: '#f5f6f7' }}>
                     {
@@ -50,7 +50,7 @@ const TopBar = ({ activePath }) => {
 
             <PersonOutline  className="mx-2" style={{fontSize: '20px',fill:'#5599eb'}} />
             </div>
-
+<div className="bg-[#d5ab0f] absolute top-0 left-[50%] text-[#554642] text-xs uppercase px-4 py-1 rounded-b-lg">go back to onboarding</div>
 
         </div>
     )
